@@ -2,8 +2,7 @@ import requests
 
 
 class HttpClient:
-    def __init__(self, base_url, parts=None, headers=None):
-        self._base_url = base_url
+    def __init__(self, headers=None):
         self._session = requests.Session()
         self._headers = headers
 
@@ -15,6 +14,7 @@ class HttpClient:
             response = self._session.request(method=method, url=url, json=json, headers=self._headers)
         except requests.exceptions.RequestException:
             raise
+        return response
 
     def get(self, url):
         response = self._request(method='GET', url=url)
