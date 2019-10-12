@@ -21,6 +21,11 @@ export REALFEVR_PASSWORD=<your_password>
 flask run
 ```
 
+Example of usage
+```
+curl http://127.0.0.1:5000/
+```
+
 ## Linting
 ```
 pylint app/
