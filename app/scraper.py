@@ -20,7 +20,7 @@ class RealFevrScraper: # pylint: disable=too-few-public-methods
         """Fetches leagues specified by the user"""
         self.league_results = []
         for league_id in LEAGUE_IDS:
-            self.league_results.append(self._fetch_league_results(league_id))
+            self._fetch_league_results(league_id)
 
     def _fetch_league_results(self, league_id):
         self._fetch_teams(league_id)
@@ -46,7 +46,6 @@ class RealFevrScraper: # pylint: disable=too-few-public-methods
             "div", {"class": "current-round-game"})
 
     def _fetch_round_games_detail(self):
-        round_games_detail = []
         for round_game in self.round_games:
             team_modules = round_game.find_all("div", {"class": "team-module"})
             for team_module in team_modules:
@@ -54,17 +53,14 @@ class RealFevrScraper: # pylint: disable=too-few-public-methods
                     "div", {"class": "team-info--name"}).find("a").get('title')
                 team_score = team_module.find(
                     "div", {"class": "team-score"}).find("span").text.strip()
-
                 try:
                     team_players_left = team_module.find(
                         "div", {"class": "team-info--playersLeft"}).find("span").text.strip()
                 except Exception: #TODO: Add specific exception
                     team_players_left = team_module.find(
                         "div", {"class": "team-info--playersLeft"}).text.strip()
-
-                round_games_detail.append(
+                self.league_results.append(
                     [team_name, team_score, team_players_left])
-        return round_games_detail
 
 
 def _process_response(response):
