@@ -18,10 +18,9 @@ class RealFevrScraper: # pylint: disable=too-few-public-methods
 
     def fetch_leagues(self):
         """Fetches leagues specified by the user"""
-        league_results = []
+        self.league_results = []
         for league_id in LEAGUE_IDS:
-            league_results.append(self._fetch_league_results(league_id))
-        self.league_results = league_results
+            self.league_results.append(self._fetch_league_results(league_id))
 
     def _fetch_league_results(self, league_id):
         self._fetch_teams(league_id)
