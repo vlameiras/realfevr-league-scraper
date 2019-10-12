@@ -19,5 +19,10 @@ export FLASK_APP=app.app
 flask run
 ```
 
+## Linting
+```
+pylint app/
+``` 
+
 ## Notes
 Currently it will extract each round team performance. In the near future it should also extract player informations
