@@ -4,7 +4,7 @@ This small project was a request from a group of friends which love to play Real
 
 Hence the creation of this small python application which scrapes RealFevr in a responsible way :)
 
-Given a list of league ids and valid website credentials, it will scrape RealFevr using `requests` and `beautifulsoup4`. Results are printed in a very simple table layout via `PrettyTable`
+Given a list of league ids and valid website credentials, it will scrape RealFevr using `requests` and `beautifulsoup4`. Results are printed in HTML or plain text via `PrettyTable`.
 
 ## Requirements
 - Valid RealFevr credentials
@@ -22,7 +22,7 @@ flask run
 ```
 
 ## Usage
-*Plain text output*
+**Plain text output**
 ```
 curl -XGET http://127.0.0.1:5000/
 
@@ -53,7 +53,8 @@ curl -XGET http://127.0.0.1:5000/
 +-----------------------+--------+--------------+
 ```
 
-*HTML Table output*
+**HTML Table output**
+
 ```
 curl -XGET http://127.0.0.1:5000/html
 ...
@@ -62,7 +63,7 @@ curl -XGET http://127.0.0.1:5000/html
 ## Linting
 ```
 pylint app/
-``` 
+```
 
 ## Notes
-Currently it will extract each round team performance. In the near future it should also extract player informations
+Currently, the scraper will extract each team's round performance. In the near future it should also extract player informations.
