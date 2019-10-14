@@ -15,8 +15,10 @@ table_output.field_names = TABLE_FIELDS
 scraper = RealFevrScraper()
 
 
-@app.route("/")
-def results():
+
+@app.route("/", defaults={"output_type": "plain"})
+@app.route("/<string:output_type>")
+def results(output_type='html'):
     """Scrapes user private RealFevr leagues
     :return: HTML table with results
     :rtype: HTML response
@@ -27,6 +29,9 @@ def results():
         return "An error occurred while accessing RealFevr"
     for result in scraper.league_results:
         table_output.add_row(result)
-    response = table_output.get_html_string(attributes={"border": 1})
+    if output_type == 'html':
+        response = table_output.get_html_string(attributes={"border": 1})
+    else:
+        response = table_output.get_string()
     table_output.clear_rows()
     return response
