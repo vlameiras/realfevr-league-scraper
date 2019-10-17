@@ -11,7 +11,7 @@ Given a list of league ids and valid website credentials, it will scrape RealFev
 - Provide a list of leagues which you have access to
   
 ## Installation
-```
+```bash
 python3 -m venv env
 source env/bin/activate
 pip install -r requirements.txt
@@ -23,7 +23,7 @@ flask run
 
 ## Usage
 **Plain text output**
-```
+```bash
 curl -XGET http://127.0.0.1:5000/
 
 
@@ -55,7 +55,7 @@ curl -XGET http://127.0.0.1:5000/
 
 **HTML Table output**
 
-```
+```bash
 curl -XGET http://127.0.0.1:5000/html
 ...
 ```
