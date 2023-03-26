@@ -1,8 +1,8 @@
 """Scraper module"""
 from urllib.parse import urljoin
 from bs4 import BeautifulSoup
-from .defaults import ADDITIONAL_HEADERS, BASE_URL, LEAGUE_IDS, LOGIN_URL, TEAMS_URL
-from .client import HttpClient
+from app.defaults import ADDITIONAL_HEADERS, BASE_URL, LEAGUE_IDS, LOGIN_URL, TEAMS_URL
+from app.client import HttpClient
 
 
 class RealFevrScraper: # pylint: disable=too-few-public-methods

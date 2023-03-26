@@ -3,8 +3,8 @@
 from flask import Flask
 from prettytable import PrettyTable
 import requests
-from .defaults import TABLE_FIELDS
-from .scraper import RealFevrScraper
+from app.defaults import TABLE_FIELDS
+from app.scraper import RealFevrScraper
 
 
 app = Flask(__name__)
