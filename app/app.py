@@ -3,8 +3,8 @@
 from flask import Flask
 from prettytable import PrettyTable
 import requests
-from app.defaults import TABLE_FIELDS
-from app.scraper import RealFevrScraper
+from .defaults import TABLE_FIELDS
+from .scraper import RealFevrScraper
 
 
 app = Flask(__name__)
@@ -35,3 +35,6 @@ def results(output_type='html'):
         response = table_output.get_string()
     table_output.clear_rows()
     return response
+
+if __name__ == "__main__":
+    app.run()
