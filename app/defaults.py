@@ -5,7 +5,7 @@ REALFEVR_USERNAME = os.getenv('REALFEVR_USERNAME', None)
 REALFEVR_PASSWORD = os.getenv('REALFEVR_PASSWORD', None)
 BASE_URL = 'https://fantasy.realfevr.com'
 TEAMS_URL = '/teams/{}'
-LOGIN_URL = '/users/sign_in?utf8=%E2%9C%93&authenticity_token=jRYO5H2JZlO12BzuGokujb5JpPHRhjuhzEDiuu6YuJ8%3D&user%5Bemail%5D={}&user%5Bremember_me%5D=0&user%5Bpassword%5D={}&button='.format(REALFEVR_USERNAME, REALFEVR_PASSWORD) # pylint: disable=line-too-long
+LOGIN_URL = '/users/sign_in?utf8=%E2%9C%93&authenticity_token=<placeholder>%3D&user%5Bemail%5D={}&user%5Bremember_me%5D=0&user%5Bpassword%5D={}&button='.format(REALFEVR_USERNAME, REALFEVR_PASSWORD) # pylint: disable=line-too-long
 LEAGUE_IDS = []
 LEAGUE_EXCLUDED_TEAMS = []
 TABLE_FIELDS = ["Team", "Points", "Players Left"]
